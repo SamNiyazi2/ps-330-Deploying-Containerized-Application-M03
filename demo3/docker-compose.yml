@@ -12,7 +12,7 @@ services:
         target: /secrets/pg-password
         mode: 0400
     networks:
-      - wb-net
+      - ps-330-m03-web-net
 
   products-api:
     image: psdockerrun/products-api
@@ -25,7 +25,7 @@ services:
       - source: products-api-dbconfig
         target: /app/config/db/application.properties
     networks:
-      - wb-net
+      - ps-330-m03-web-net
 
   stock-api:
     image: psdockerrun/stock-api
@@ -34,7 +34,7 @@ services:
     environment:
       - POSTGRES_CONNECTION_STRING=host=products-db port=5432 user=postgres password=wiredtest2 dbname=postgres sslmode=disable
     networks:
-      - wb-net
+      - ps-330-m03-web-net
 
   web:
     image: psdockerrun/web
@@ -50,11 +50,11 @@ services:
       - source: web-api
         target: /app/secrets/api.json
     networks:
-      - wb-net
+      - ps-330-m03-web-net
 
 networks:
-  wb-net:
-    name: wb-net-test
+  ps-330-m03-web-net:
+    name: ps-330-m03-web-net-test
 
 configs:
   products-api-config:
