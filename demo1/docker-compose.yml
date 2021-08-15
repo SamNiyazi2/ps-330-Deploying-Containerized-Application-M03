@@ -1,15 +1,13 @@
 
-# 08/12/2021 04:37 am - SSN 
-# Database fails to start
-# Auto restart is preventing ability to catch logs
- 
+ # 08/15/2021 10:08 am - SSN
+ # Replace psdockerrun/products-db with samniyazi/ps-330-products-db-test-20210815
 
 version: "3.7"
 
 services:
 
   products-db:
-    image: psdockerrun/products-db
+    image: samniyazi/ps-330-products-db-test-20210815
     ports:
       - "5432:5432"
     environment:
