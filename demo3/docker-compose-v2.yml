@@ -1,8 +1,11 @@
+ # 08/16/2021 03:49 am - SSN
+ # Replace psdockerrun/products-db with samniyazi/ps-330-products-db-test-20210815
+
 version: "3.7"
 
 services:
   products-db:
-    image: psdockerrun/products-db
+    image: samniyazi/ps-330-products-db-test-20210815
     ports:
       - "5432:5432"
     environment:
@@ -45,7 +48,7 @@ services:
     ports:
       - "8080:80"
     environment:
-      - Environment=TEST
+      - Environment=m03-demo3-web-v2-TEST
       - Debug:ShowHost=true
     configs:
       - source: web-logging
